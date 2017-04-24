@@ -1,0 +1,50 @@
+/* ====== BASE STYLES ====== */
+
+// Global
+
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: $base__font-size;
+  line-height: ($base__line-height / $base__font-size);
+  font-family: $font-family--primary;
+  font-weight: $font-weight--regular;
+  background: $light-grey;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+p {
+  margin-top: em(5px);
+  margin-bottom: em(5px);
+}
+
+a {
+  text-decoration: none;
+  color: $mine-shaft;
+  transition: .3s ease-in-out;
+
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}

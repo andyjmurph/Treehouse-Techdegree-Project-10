@@ -1,0 +1,146 @@
+/* ====== MAIN STYLES ====== */
+
+// Header styles
+
+header {
+  background: $mine-shaft;
+  color: $white;
+  padding: em(10px);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: em(24px);
+  font-weight: $font-weight--regular;
+  margin: 0;
+
+  & a {
+    color: $light-grey;
+    text-decoration: none;
+  }
+}
+
+.logo span {
+  font-weight: $font-weight--bold;
+}
+
+// Search bar
+
+.searchbar {
+  position: relative;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  font-size: em(14px);
+  font-weight: $font-weight--regular;
+  color: lighten($mine-shaft, 30%);
+  background: $dark-grey;
+  border-radius: em(5px);
+  padding: em(10px);
+  min-width: em(250px);
+}
+
+::-webkit-input-placeholder {
+  color: lighten($mine-shaft, 30%);
+}
+
+.searchbar span {
+  position: absolute;
+  right: 5%;
+  top: 15%;
+  color: lighten($mine-shaft, 30%);
+  cursor: pointer;
+}
+
+// Profile section
+
+.profile-info {
+  margin-top: em(48px);
+}
+
+.profile-info h2 {
+  margin-bottom: em(5px);
+}
+
+.user {
+  width: 50%;
+  display: flex;
+}
+
+.user-info img {
+  border-radius: em(5px);
+  width: 30%;
+  margin-right: 10%;
+}
+
+.user-info p {
+  margin-bottom: em(20px);
+}
+
+.user-info a {
+  background: darken($color-accent, 10%);
+  padding: em(10px);
+  transition: .3s ease-out;
+  border-radius: em(2px);
+  color: $white;
+
+  &:hover {
+    background: $color-accent ;
+  }
+}
+
+//Gallery section
+
+.gallery {
+  margin-top: em(48px);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: $white;
+  border-radius: em(5px);
+  padding: em(10px);
+  margin-bottom: em(16px);
+  flex: 30%;
+  max-width: 30%;
+}
+
+.desc {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  font-weight: $font-weight--bold;
+}
+
+.stats p {
+  margin-right: em(15px);
+  padding-right: em(10px);
+
+  &:first-child {
+    border-right: 2px solid $light-grey;
+  }
+
+}
+
+.stats i {
+  margin-left: auto;
+  color: $color-accent;
+}
