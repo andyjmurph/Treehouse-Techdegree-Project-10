@@ -7,7 +7,7 @@ const gallery = document.querySelector('.gallery');
 const userInfo = document.querySelector('.user-info');
 const instructions = document.querySelector('.instructions');
 const errorBar = document.getElementById('error')
-const overlay = document.createElement('div');
+let overlay = document.createElement('div');
 const overlayCard = document.createElement('div');
 const endOfBody = document.querySelector('body script');
 let overlayUserImg = document.createElement('img');
@@ -34,12 +34,10 @@ function removeLI(el){
 
 // Close the overlayCard
 overlay.onclick = (e) => {
-  if (e.target.classList.contains('card') === true || e.target.parentNode.classList.contains('card') === true) {
-    //Do nothing
-  } else {
-  overlay.style.display = 'none';
+  if (e.target.classList.contains('overlay')) {
+    overlay.style.display = 'none';
+    removeLI(overlayRepo);
   }
-  removeLI(cardRepo);
 }
 
 // UpdateOverlay
@@ -106,7 +104,7 @@ xhr.onreadystatechange = () => {
         //Build the html
         cardHTML += `
         <li class="card">
-          <h3>${repoName}</h3>
+          <a href="${repoURL}" target="_blank"><h3>${repoName}</h3></a>
           <p class="desc">${repoDesc}</p>
           <div class="stats">
             <p>${forkCount} Forks</p>
@@ -142,10 +140,11 @@ gallery.addEventListener('click', (e) => {
   }
   overlay.style.display = 'block';
   let cardTitle = selectedCard.getElementsByTagName('h3')[0].innerHTML;
-  let cardDesc = selectedCard.querySelector('.desc').innerHTML;
-  let cardStats = selectedCard.querySelector('.stats').innerHTML;
+  let cardDesc = selectedCard.querySelectorAll('.desc').innerHTML;
+  let cardStats = selectedCard.querySelectorAll('.stats').innerHTML;
   updateOverlay(cardTitle, cardDesc, cardStats);
-})
+  }
+)
 
 
 //Store the value typed in searchBar as the searchValue when clicking the searchButton
